@@ -1,0 +1,43 @@
+body[b-6jdovl4o8i]
+{
+    background-color: #171717 !important;
+    color: #EAEAEA !important ;
+    font-family: arial, sans-serif !important;
+}
+
+main[b-6jdovl4o8i]
+{
+    background-color: #252525;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 5vw;
+}
+
+
+.route-builder[b-6jdovl4o8i]
+{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.route-builder .current-route-list[b-6jdovl4o8i]
+{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #171717;
+    width: 160px;
+    min-height: inherit;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.route-builder .current-route-list a[b-6jdovl4o8i]
+{
+    color: #DA3020;
+}

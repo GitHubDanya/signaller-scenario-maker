@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "TO2uM8rvHTc=",
+  "success": true,
+  "projectFilePath": "/home/danya/projects/godot/signaller/signaller-scenario-maker/signaller-scenario-maker/signaller-scenario-maker.csproj",
+  "expectedPackageFiles": [
+    "/home/danya/.nuget/packages/microsoft.aspnetcore.app.internal.assets/10.0.4/microsoft.aspnetcore.app.internal.assets.10.0.4.nupkg.sha512",
+    "/home/danya/.nuget/packages/photino.native/4.0.22/photino.native.4.0.22.nupkg.sha512",
+    "/home/danya/.nuget/packages/photino.net/4.0.16/photino.net.4.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

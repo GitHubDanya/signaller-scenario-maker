@@ -1,0 +1,40 @@
+@page "/"
+@rendermode InteractiveServer
+
+<main>
+    <h1>Routes:</h1>
+    <div>
+        <div class="route-builder">
+            <EditForm Model="routeForm" OnSubmit="RouteSubmit" FormName="RouteForm">
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    Write a waypoint:
+                    <InputText style="background-color: rgb(45, 45, 45); color: rgb(245, 245, 245);" 
+                        @bind-Value="routeForm!.Waypoint"
+                        @onkeydown="RouteFormKeyPress"/>
+                </div>
+            </EditForm>
+            <div class="current-route-list">
+                @foreach (string waypoint in currentRoute)
+                {
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 5px;">
+                    <span>@waypoint</span>
+                    <a @onclick="() => currentRoute.Remove(waypoint)">x</a>
+                </div>
+                }
+            </div>
+        </div>
+        <div class="route-display">
+            @foreach (KeyValuePair<int , List<string>> kvp in routes)
+                {
+                <details>
+                    <span>@($"Route #{kvp.Key}")</span>
+                </details>
+                <div>
+                    <p>string.Join(" -&gt; ", kvp.Value)</p>
+                </div>
+                }
+        </div>
+
+    </div>
+
+</main>
