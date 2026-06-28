@@ -48,5 +48,6 @@
 /home/danya/projects/godot/signaller/signaller-scenario-maker/signaller-scenario-maker/obj/Debug/net10.0/ref/signaller-scenario-maker.dll
 /home/danya/projects/godot/signaller/signaller-scenario-maker/signaller-scenario-maker/obj/Debug/net10.0/scopedcss/Components/Pages/Dashboard.razor.rz.scp.css
 /home/danya/projects/godot/signaller/signaller-scenario-maker/signaller-scenario-maker/obj/Debug/net10.0/compressed/iyk8j2sio9-{0}-ma583hh8t0-ma583hh8t0.gz
-/home/danya/projects/godot/signaller/signaller-scenario-maker/signaller-scenario-maker/obj/Debug/net10.0/compressed/0z2oxe8btd-{0}-56sc8ni9gd-56sc8ni9gd.gz
-/home/danya/projects/godot/signaller/signaller-scenario-maker/signaller-scenario-maker/obj/Debug/net10.0/compressed/opf8j1hc6b-{0}-56sc8ni9gd-56sc8ni9gd.gz
+/home/danya/projects/godot/signaller/signaller-scenario-maker/signaller-scenario-maker/obj/Debug/net10.0/signaller-scenario-maker.sourcelink.json
+/home/danya/projects/godot/signaller/signaller-scenario-maker/signaller-scenario-maker/obj/Debug/net10.0/compressed/0z2oxe8btd-{0}-yoctfbvchd-yoctfbvchd.gz
+/home/danya/projects/godot/signaller/signaller-scenario-maker/signaller-scenario-maker/obj/Debug/net10.0/compressed/opf8j1hc6b-{0}-yoctfbvchd-yoctfbvchd.gz

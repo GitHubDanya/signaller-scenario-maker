@@ -2,8 +2,8 @@
 @rendermode InteractiveServer
 
 <main>
-    <h1>Routes:</h1>
-    <div>
+    <h1>routes</h1>
+    <div class="routes">
         <div class="route-builder">
             <EditForm Model="routeForm" OnSubmit="RouteSubmit" FormName="RouteForm">
                 <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -14,27 +14,56 @@
                 </div>
             </EditForm>
             <div class="current-route-list">
-                @foreach (string waypoint in currentRoute)
-                {
-                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 5px;">
-                    <span>@waypoint</span>
-                    <a @onclick="() => currentRoute.Remove(waypoint)">x</a>
-                </div>
-                }
+                @for (int index = 0; index < currentRoute.Count; index++)
+                    {
+                    var i = index;
+                    <div class="waypoint-row">
+                        <div class="action-left">
+                            @if (i != 0)
+                            {
+                            <a @onclick="() => MoveWaypointUp(i)">↑</a>
+                            }
+                        </div>
+
+                        <span class="waypoint-text">@currentRoute[i]</span>
+
+                        <div class="action-right">
+                            <a class="delete-btn" @onclick="() => currentRoute.RemoveAt(i)">x</a>
+                            @if (i != currentRoute.Count - 1)
+                            {
+                            <a @onclick="() => MoveWaypointDown(i)">↓</a>
+                            }
+                        </div>
+                    </div>
+                    }
+                    <button class="create-btn" @onclick="CreateRoute">Create</button>
             </div>
         </div>
         <div class="route-display">
             @foreach (KeyValuePair<int , List<string>> kvp in routes)
                 {
                 <details>
-                    <span>@($"Route #{kvp.Key}")</span>
+                    <summary>@($"Route #{kvp.Key}")</summary>
                 </details>
-                <div>
-                    <p>string.Join(" -&gt; ", kvp.Value)</p>
+                <div class="details-content">
+                    <p>@(string.Join(" -> ", kvp.Value))</p>
                 </div>
                 }
         </div>
-
     </div>
 
+    <h1>trains</h1>
+    <div class="trains">
+        <div class="train-display">
+            @foreach (KeyValuePair<int , List<string>> kvp in routes)
+                {
+                <details>
+                    <summary>@("")</summary>
+                </details>
+                <div class="details-content">
+                    <p>@(string.Join(" -> ", kvp.Value))</p>
+                </div>
+                }
+        </div>
+    </div>
 </main>

@@ -15,29 +15,92 @@ main
     padding: 5vh 5vw;
 }
 
+details[open] + div.details-content {
+ max-height: 800px; /* Set a max-height value enough to show all the content */ 
+ border-color: #888;
+ transition: max-height 400ms ease-out, border 0ms linear;
+}
+details[open] span::before {
+ rotate: 90deg;
+ transition: rotate 200ms ease-out;
+}
+div.details-content { 
+ max-width: 500px;
+ box-sizing: border-box;
+ margin: 10px 10px;
+ padding: 0 10px;
+ max-height: 0;
+ overflow: hidden;
+ border: 2px solid transparent;
+ transition: max-height 400ms ease-out, border 0ms 400ms linear;
+}
 
-.route-builder
+.routes
+{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.routes .route-builder
 {
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 15px;
 }
 
-.route-builder .current-route-list
+.routes .route-builder .current-route-list
 {
     padding: 5px 10px;
     border-radius: 5px;
     background-color: #171717;
-    width: 160px;
+    width: inherit;
     min-height: inherit;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
-    flex-wrap: wrap;
+}
+.waypoint-row {
+    display: grid;
+    grid-template-columns: 15px 1fr 30px; 
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
 }
 
-.route-builder .current-route-list a
-{
+.waypoint-text {
+    text-align: center;
+    word-break: break-all;
+}
+
+.action-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.action-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.delete-btn {
     color: #DA3020;
+}
+
+/* Optional: Make the create button look better in the list */
+.create-btn {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.routes .route-builder .current-route-list a {
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none; /* Prevents highlighting text while clicking fast */
+}
+.routes .route-builder .current-route-list a
+{
+    cursor: pointer;
 }

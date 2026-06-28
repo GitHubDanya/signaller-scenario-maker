@@ -17,14 +17,35 @@ namespace signaller_scenario_maker.Components.Pages
 
         private void RouteSubmit()
         {
-            Console.WriteLine($"waypoint submitted:\n\n{routeForm.Waypoint}");
-
             if (routeForm.Waypoint == null || string.IsNullOrEmpty(routeForm.Waypoint)) return;
 
             currentRoute.Add(routeForm.Waypoint);
 
             routeForm.Waypoint = string.Empty;
         }
+
+        private void MoveWaypointUp(int waypointIndex)
+        {
+            if (waypointIndex == 0) return;
+            (currentRoute[waypointIndex], currentRoute[waypointIndex - 1]) =
+                (currentRoute[waypointIndex - 1], currentRoute[waypointIndex]);
+        }
+
+        private void MoveWaypointDown(int waypointIndex)
+        {
+            Console.WriteLine(waypointIndex);
+            if (waypointIndex >= currentRoute.Count - 1) return;
+            (currentRoute[waypointIndex], currentRoute[waypointIndex + 1]) =
+                (currentRoute[waypointIndex + 1], currentRoute[waypointIndex]);
+        }
+
+        private void CreateRoute()
+        {
+            int id = routes.Count + 1;
+            routes[id] = currentRoute;
+            currentRoute = new();
+        }
+
     }
 
     public class RouteForm

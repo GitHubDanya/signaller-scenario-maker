@@ -197,29 +197,92 @@ main[b-6jdovl4o8i]
     padding: 5vh 5vw;
 }
 
+details[open] + div.details-content[b-6jdovl4o8i] {
+ max-height: 800px; /* Set a max-height value enough to show all the content */ 
+ border-color: #888;
+ transition: max-height 400ms ease-out, border 0ms linear;
+}
+details[open] span[b-6jdovl4o8i]::before {
+ rotate: 90deg;
+ transition: rotate 200ms ease-out;
+}
+div.details-content[b-6jdovl4o8i] { 
+ max-width: 500px;
+ box-sizing: border-box;
+ margin: 10px 10px;
+ padding: 0 10px;
+ max-height: 0;
+ overflow: hidden;
+ border: 2px solid transparent;
+ transition: max-height 400ms ease-out, border 0ms 400ms linear;
+}
 
-.route-builder[b-6jdovl4o8i]
+.routes[b-6jdovl4o8i]
+{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.routes .route-builder[b-6jdovl4o8i]
 {
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 15px;
 }
 
-.route-builder .current-route-list[b-6jdovl4o8i]
+.routes .route-builder .current-route-list[b-6jdovl4o8i]
 {
     padding: 5px 10px;
     border-radius: 5px;
     background-color: #171717;
-    width: 160px;
+    width: inherit;
     min-height: inherit;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
-    flex-wrap: wrap;
+}
+.waypoint-row[b-6jdovl4o8i] {
+    display: grid;
+    grid-template-columns: 15px 1fr 30px; 
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
 }
 
-.route-builder .current-route-list a[b-6jdovl4o8i]
-{
+.waypoint-text[b-6jdovl4o8i] {
+    text-align: center;
+    word-break: break-all;
+}
+
+.action-left[b-6jdovl4o8i] {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.action-right[b-6jdovl4o8i] {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.delete-btn[b-6jdovl4o8i] {
     color: #DA3020;
+}
+
+/* Optional: Make the create button look better in the list */
+.create-btn[b-6jdovl4o8i] {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.routes .route-builder .current-route-list a[b-6jdovl4o8i] {
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none; /* Prevents highlighting text while clicking fast */
+}
+.routes .route-builder .current-route-list a[b-6jdovl4o8i]
+{
+    cursor: pointer;
 }
